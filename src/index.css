@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0b0f1a;
+  --color-surface: rgba(23, 32, 53, 0.85);
+  --color-brew: #f97316;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #f1f5f9;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass {
+    background: var(--color-surface);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  }
+  
+  .input-glass {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.2s;
+  }
+  
+  .input-glass:focus {
+    border-color: var(--color-brew);
+    outline: none;
+  }
+  
+  .lcd {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .brew-checkbox {
+    width: 24px;
+    height: 24px;
+    appearance: none;
+    border: 2px solid #f97316;
+    border-radius: 6px;
+    background: rgba(249, 115, 22, 0.1);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .brew-checkbox:checked {
+    background: #f97316;
+  }
+  
+  .brew-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    left: 4px;
+    top: -2px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: rgba(249, 115, 22, 0.3);
+    border-radius: 10px;
+  }
+}
